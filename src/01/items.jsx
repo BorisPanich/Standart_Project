@@ -17,7 +17,7 @@ const ItemsPage = () => {
 
     }, [])
 
-    const deleteItem = (id: any) => {
+    const deleteItem = (id) => {
         setStatus('loading')
         api.deleteItem(id).then((res) => {
             setItems(items.filter(i => i.id !== id))
@@ -40,7 +40,7 @@ const ItemsPage = () => {
 
 }
 
-const Item = (props: any) => <li>
+const Item = (props) => <li>
     {props.item.title}
     <button onClick={() => { props.deleteItem(props.item.id) }} >X</button>
 </li>

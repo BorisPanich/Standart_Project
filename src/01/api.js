@@ -1,9 +1,9 @@
 
 export const api = {
-    loadItems(categoryId: any) {
+    loadItems(categoryId) {
         return axiosInstance.get('/items/ + categoryId')
     },
-    deleteItem(id: any) {
+    deleteItem(id) {
         return axiosInstance.delete('/items/' + id)
     }
 }
