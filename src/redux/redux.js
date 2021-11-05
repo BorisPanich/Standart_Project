@@ -19,6 +19,13 @@ const itemsReducer = (state = initialState, action) => {
                 ...state,
                 items: state.items.filter(i => i.id !== action.id)
             }
+        case 'items-updated':
+            return {
+                ...state,
+                items: state.items.map(i => i.id === action.id
+                    ? { ...i, ...action.data }
+                    : i)
+            }
         default:
             return state
     }
